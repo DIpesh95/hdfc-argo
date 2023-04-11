@@ -1,0 +1,24 @@
+<!-- dashboard.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Dashboard</h1>
+  <a href="/dashboard/add">Add Product</a>
+
+  <!-- Search form -->
+  <form action="/dashboard/search" method="get">
+    <input type="text" name="keyword" placeholder="Search product by name">
+    <button type="submit">Search</button>
+  </form>
+
+  <ul>
+    <% products.forEach(product => { %>
+      <!-- Product cards here -->
+    <% }); %>
+  </ul>
+  <a href="/logout">Logout</a>
+</body>
+</html>

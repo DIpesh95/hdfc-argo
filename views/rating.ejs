@@ -1,0 +1,28 @@
+<!-- dashboard.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Dashboard</h1>
+  <a href="/dashboard/add">Add Product</a>
+
+  <!-- Filter form -->
+  <form action="/dashboard/filter" method="get">
+    <select name="filterBy">
+      <option value="price">Filter by Price</option>
+      <option value="rating">Filter by Rating</option>
+    </select>
+    <input type="number" name="filterValue" placeholder="Filter value">
+    <button type="submit">Filter</button>
+  </form>
+
+  <ul>
+    <% products.forEach(product => { %>
+      <!-- Product cards here -->
+    <% }); %>
+  </ul>
+  <a href="/logout">Logout</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Dashboard</h1>
+  <a href="/dashboard/add">Add Product</a>
+  <ul>
+    <% products.forEach(product => { %>
+      <li>
+        <strong>Name:</strong> <%= product.name %>,
+        <strong>Price:</strong> <%= product.price %>,
+        <strong>Rating:</strong> <%= product.rating %>
+        <form action="/dashboard/edit/<%= product.id %>" method="post">
+          <!-- Form for updating product (UPDATE operation) -->
+          <!-- Include input fields for name, price, rating -->
+          <!-- Add a submit button to submit the form -->
+        </form>
+        <form action="/dashboard/delete/<%= product.id %>" method="post">
+          <!-- Form for deleting product (DELETE operation) -->
+          <!-- Add a submit button to submit the form -->
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/logout">Logout</a>
+</body>
+</html>
